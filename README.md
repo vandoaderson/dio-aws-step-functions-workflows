@@ -1,14 +1,3 @@
-dio-aws-step-functions-workflows/
-│
-├── README.md
-├── images/
-│   ├── step-functions-console.png
-│   ├── workflow-execution.png
-│   └── state-machine-definition.png
-│
-└── docs/
-    └── anotacoes.md
-
 # Desafio DIO - AWS Step Functions
 
 ## Descrição
@@ -23,6 +12,20 @@ Este repositório foi desenvolvido como parte do laboratório da DIO com foco em
 * Entender o funcionamento das AWS Step Functions;
 * Documentar processos técnicos de forma clara e estruturada;
 * Utilizar o GitHub como ferramenta de compartilhamento de conhecimento técnico.
+
+---
+
+## Arquitetura do Workflow
+
+A imagem abaixo representa um exemplo simples de utilização do **AWS Step Functions**, integrando serviços como **Amazon S3**, **AWS Lambda** e um banco de dados para orquestração de processos automatizados.
+
+<p align="center">
+  <img src="./images/step-function.png" alt="Arquitetura AWS Step Functions" width="800">
+</p>
+
+<p align="center">
+  Exemplo de workflow automatizado utilizando AWS Step Functions, Amazon S3, AWS Lambda e banco de dados.
+</p>
 
 ---
 
@@ -52,14 +55,14 @@ São as etapas que compõem o workflow.
 
 Tipos comuns:
 
-* Task
-* Choice
-* Wait
-* Pass
-* Succeed
-* Fail
-* Parallel
-* Map
+* **Task** – executa uma atividade, como invocar uma função Lambda;
+* **Choice** – adiciona decisões condicionais ao fluxo;
+* **Wait** – pausa a execução por um período determinado;
+* **Pass** – repassa dados para a próxima etapa sem processamento;
+* **Succeed** – indica a conclusão bem-sucedida do workflow;
+* **Fail** – encerra o fluxo em caso de falha;
+* **Parallel** – executa múltiplas etapas simultaneamente;
+* **Map** – processa uma coleção de itens iterativamente.
 
 ### Amazon States Language (ASL)
 
@@ -69,12 +72,12 @@ Linguagem baseada em JSON utilizada para definir o comportamento das máquinas d
 
 ## Fluxo desenvolvido durante o laboratório
 
-1. Criação da máquina de estados;
-2. Definição das etapas do processo;
-3. Configuração das integrações necessárias;
-4. Execução do workflow;
-5. Análise do histórico de execução;
-6. Validação dos resultados.
+1. Recebimento ou identificação do arquivo de entrada;
+2. Processamento inicial utilizando AWS Lambda;
+3. Validação das informações recebidas;
+4. Persistência dos dados em banco de dados;
+5. Armazenamento do resultado do processamento;
+6. Finalização e monitoramento da execução do workflow.
 
 ---
 
@@ -83,7 +86,8 @@ Linguagem baseada em JSON utilizada para definir o comportamento das máquinas d
 * Step Functions simplifica significativamente a orquestração de processos distribuídos;
 * O monitoramento visual facilita a identificação de falhas;
 * O tratamento de erros pode ser implementado diretamente no fluxo;
-* A reutilização de componentes torna as soluções mais organizadas e escaláveis.
+* A reutilização de componentes torna as soluções mais organizadas e escaláveis;
+* A integração nativa com outros serviços AWS reduz a complexidade do desenvolvimento.
 
 ---
 
@@ -96,6 +100,9 @@ As capturas de tela utilizadas durante a execução do laboratório estão dispo
 ## Tecnologias Utilizadas
 
 * AWS Step Functions
+* AWS Lambda
+* Amazon S3
+* Banco de Dados Relacional
 * AWS Management Console
 * Git
 * GitHub
@@ -107,10 +114,13 @@ As capturas de tela utilizadas durante a execução do laboratório estão dispo
 
 Este laboratório proporcionou uma visão prática sobre automação de workflows na AWS, demonstrando como as Step Functions podem ser utilizadas para construir soluções mais robustas, escaláveis e de fácil manutenção.
 
+A experiência também reforçou a importância da documentação técnica como ferramenta de aprendizado contínuo e compartilhamento de conhecimento.
+
 ---
 
 ## Referências
 
-* Documentação oficial da AWS Step Functions
-* Materiais disponibilizados pela DIO durante o curso
-* Documentação oficial do GitHub
+* Documentação oficial da AWS Step Functions;
+* Materiais disponibilizados pela DIO durante o curso;
+* Documentação oficial do GitHub;
+* Guia de Markdown do GitHub.
